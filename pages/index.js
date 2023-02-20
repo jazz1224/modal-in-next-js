@@ -1,19 +1,12 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import style from './index.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import style from "./index.module.css";
 import { useEffect, useRef } from "react";
 
-
 export default function Home() {
-  // useEffect(() => {
-  //   console.log(document.title);
-  //   var dialog = document.querySelector('dialog')
-  // }, []);
-  
-
-  function close(){
-    console.log('CLOSE BUTTON CLICKED!')
+  function close() {
+    console.log("CLOSE BUTTON CLICKED!");
   }
 
   return (
@@ -25,17 +18,23 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <button onClick={()=>{document.querySelector('dialog').showModal()}}>Show MODAL!!</button>
+        <button
+          onClick={() => {
+            document.querySelector("dialog").showModal();
+          }}
+        >
+          Show MODAL!!
+        </button>
         <dialog className={style.dialog}>
           I AM MODAL
-          <form method='dialog'>
-            <button value='close' onClick={close}>CLOSE</button>
-            <button value='confirm'>Confirm</button>
+          <form method="dialog">
+            <button value="close" onClick={close}>
+              CLOSE
+            </button>
+            <button value="confirm">Confirm</button>
           </form>
         </dialog>
       </main>
-
-
     </div>
-  )
+  );
 }
